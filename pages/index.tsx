@@ -14,6 +14,7 @@ import { encodePacked, Hex, keccak256, parseEther } from "viem";
 import { ClientRendered } from "@decent.xyz/box-ui";
 import { useState } from "react";
 import { songcampAbi } from "./songcampAbi";
+const chains = [ChainId.SEPOLIA, ChainId.ZORA_GOERLI];
 
 const nftAddress = "0xd643567B131777cD52841Ca1FF7663Ba890a0092";
 export const useNftBalance = ({
@@ -56,6 +57,7 @@ const FirstBox = () => {
         className="rounded-lg border shadow-md bg-white px-24"
         paymentButtonText="Mint an NFT"
         actionType={ActionType.NftMint}
+        chains={chains}
         actionConfig={{
           contractAddress: nftAddress,
           chainId: ChainId.ZORA_GOERLI,
@@ -187,6 +189,7 @@ const SecondBox = () => {
         className="rounded-lg border shadow-md bg-white px-24"
         paymentButtonText="Write to DISC"
         actionType={ActionType.NftMint}
+        chains={chains}
         actionConfig={
           {
             contractAddress: nftAddress,
