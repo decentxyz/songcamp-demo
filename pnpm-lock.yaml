@@ -5,12 +5,30 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@decent.xyz/box-common':
+    specifier: ^1.0.8
+    version: 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+  '@decent.xyz/box-evm':
+    specifier: ^1.0.3
+    version: 1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+  '@decent.xyz/box-hooks':
+    specifier: ^1.0.44
+    version: 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+  '@decent.xyz/box-ui':
+    specifier: ^1.0.42
+    version: 1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+  '@decent.xyz/the-box':
+    specifier: ^1.1.61
+    version: 1.1.61(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
   '@rainbow-me/rainbowkit':
     specifier: ^1.3.0
     version: 1.3.0(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
   next:
     specifier: ^13.4.19
     version: 13.4.19(react-dom@18.2.0)(react@18.2.0)
+  prettier:
+    specifier: ^3.1.0
+    version: 3.1.0
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -84,6 +102,87 @@ packages:
       - encoding
       - supports-color
       - utf-8-validate
+    dev: false
+
+  /@decent.xyz/box-common@1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-/jIic2Mc8xEF0pyn68bW2dun6BDqGN1bV/D7mO2EpJ/neQt+PeIvDO9kQygOfo/GAVMzZ51vi96+uhEjpImykw==}
+    peerDependencies:
+      '@wagmi/core': ^1.0.0
+      react: ^18.0.0
+      viem: ^1.0.0
+      wagmi: ^1.0.0
+    dependencies:
+      '@wagmi/core': 1.4.7(@types/react@18.2.37)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
+      react: 18.2.0
+      viem: 1.19.4(typescript@5.0.4)
+      wagmi: 1.4.7(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
+    dev: false
+
+  /@decent.xyz/box-evm@1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-mEUQa1G73KwXUKqgifzBZyQb7I/pK21gS28n9IPQUARrFDrkU0J86OIBIR4VBbNvLViaR8Be3/UNkVxvNi7ukw==}
+    peerDependencies:
+      '@wagmi/core': ^1.0.0
+      react: ^18.0.0
+      viem: ^1.0.0
+      wagmi: ^1.0.0
+    dependencies:
+      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@wagmi/core': 1.4.7(@types/react@18.2.37)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
+      react: 18.2.0
+      viem: 1.19.4(typescript@5.0.4)
+      wagmi: 1.4.7(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
+    transitivePeerDependencies:
+      - swr
+    dev: false
+
+  /@decent.xyz/box-hooks@1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-aEf6HVxUS17zgrOu26+kDSVOINjUzPvT7/Ot3KjaB/jjvicDuoKABmz5Yxr9f5W20bXkzGQZgUj3K4z2Tt3vrQ==}
+    peerDependencies:
+      react: ^18.0.0
+      swr: ^2.2.0
+    dependencies:
+      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      react: 18.2.0
+      swr: 2.2.4(react@18.2.0)
+    transitivePeerDependencies:
+      - '@wagmi/core'
+      - viem
+      - wagmi
+    dev: false
+
+  /@decent.xyz/box-ui@1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-XwfpGRu8sifLFCwkDCwfnzSd+FURekQWru9F7uMGjgstisqfy0QZ9ue4Tx7czCOvKx/RjehrhFne3ofJR2Azjg==}
+    peerDependencies:
+      react: ^18.0.0
+    dependencies:
+      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      react: 18.2.0
+    transitivePeerDependencies:
+      - '@wagmi/core'
+      - swr
+      - viem
+      - wagmi
+    dev: false
+
+  /@decent.xyz/the-box@1.1.61(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-exUDi6EPDI+GdoBo4lMlB/0kf1bsMce0Ku4pbUslYfQyql4ljcT8KCjMs+KQqb6PK5GB0KSluRIMHH8PG/FpuA==}
+    peerDependencies:
+      react: ^18.0.0
+      swr: ^2.2.0
+      viem: ^1.0.0
+    dependencies:
+      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-evm': 1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-ui': 1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      react: 18.2.0
+      swr: 2.2.4(react@18.2.0)
+      viem: 1.19.4(typescript@5.0.4)
+    transitivePeerDependencies:
+      - '@wagmi/core'
+      - wagmi
     dev: false
 
   /@emotion/hash@0.8.0:
@@ -3774,6 +3873,12 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prettier@3.1.0:
+    resolution: {integrity: sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: false
+
   /process-warning@1.0.0:
     resolution: {integrity: sha512-du4wfLyj4yCZq1VupnVSZmRsPJsNuxoDQFdCFHLaYiEbFBD7QE0a+I4D7hOxrVnh78QE/YipFAj9lXHiXocV+Q==}
     dev: false
@@ -4332,6 +4437,16 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /swr@2.2.4(react@18.2.0):
+    resolution: {integrity: sha512-njiZ/4RiIhoOlAaLYDqwz5qH/KZXVilRLvomrx83HjzCWTfa+InyfAjv05PSFxnmLzZkNO9ZfvgoqzAaEI4sGQ==}
+    peerDependencies:
+      react: ^16.11.0 || ^17.0.0 || ^18.0.0
+    dependencies:
+      client-only: 0.0.1
+      react: 18.2.0
+      use-sync-external-store: 1.2.0(react@18.2.0)
+    dev: false
 
   /tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
