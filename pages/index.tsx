@@ -67,7 +67,9 @@ const FirstBox = () => {
           },
           signature: "function safeMint(address to) payable",
           args: [address],
-        }}
+          deliverEth: true,
+          dstGasForCall: BigInt(2.5e5),
+        } as any}
         apiKey={process.env.NEXT_PUBLIC_DECENT_API_KEY as string}
       />
     </div>
