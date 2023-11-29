@@ -6,20 +6,20 @@ settings:
 
 dependencies:
   '@decent.xyz/box-common':
-    specifier: ^1.0.8
-    version: 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+    specifier: ^1.0.10
+    version: 1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
   '@decent.xyz/box-evm':
-    specifier: ^1.0.3
-    version: 1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+    specifier: ^1.0.4
+    version: 1.0.4(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
   '@decent.xyz/box-hooks':
-    specifier: ^1.0.44
-    version: 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+    specifier: ^1.0.45
+    version: 1.0.45(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
   '@decent.xyz/box-ui':
-    specifier: ^1.0.42
-    version: 1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+    specifier: ^1.0.43
+    version: 1.0.43(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
   '@decent.xyz/the-box':
-    specifier: ^1.1.61
-    version: 1.1.61(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+    specifier: ^1.1.62
+    version: 1.1.62(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
   '@rainbow-me/rainbowkit':
     specifier: ^1.3.0
     version: 1.3.0(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
@@ -104,8 +104,8 @@ packages:
       - utf-8-validate
     dev: false
 
-  /@decent.xyz/box-common@1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7):
-    resolution: {integrity: sha512-/jIic2Mc8xEF0pyn68bW2dun6BDqGN1bV/D7mO2EpJ/neQt+PeIvDO9kQygOfo/GAVMzZ51vi96+uhEjpImykw==}
+  /@decent.xyz/box-common@1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-jXhX2A74QpmeObozCKfOVcU95bwpqEtW5U5IYmNzGFyRr9CxH0ZOTNqNuT8rkMSYIHU/g7ZHyGLiRMo47id5XA==}
     peerDependencies:
       '@wagmi/core': ^1.0.0
       react: ^18.0.0
@@ -118,16 +118,16 @@ packages:
       wagmi: 1.4.7(@types/react@18.2.37)(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
     dev: false
 
-  /@decent.xyz/box-evm@1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
-    resolution: {integrity: sha512-mEUQa1G73KwXUKqgifzBZyQb7I/pK21gS28n9IPQUARrFDrkU0J86OIBIR4VBbNvLViaR8Be3/UNkVxvNi7ukw==}
+  /@decent.xyz/box-evm@1.0.4(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-+asXEMKAN6oK19LKRWcAKsk3qMPxeyomfB2NAdv+chl0pcvRp6Zk1hgr8Hp7i0AEtTIODG3+3xr0u93YQ4IFjQ==}
     peerDependencies:
       '@wagmi/core': ^1.0.0
       react: ^18.0.0
       viem: ^1.0.0
       wagmi: ^1.0.0
     dependencies:
-      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
-      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-common': 1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.45(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
       '@wagmi/core': 1.4.7(@types/react@18.2.37)(react@18.2.0)(typescript@5.0.4)(viem@1.19.4)
       react: 18.2.0
       viem: 1.19.4(typescript@5.0.4)
@@ -136,13 +136,13 @@ packages:
       - swr
     dev: false
 
-  /@decent.xyz/box-hooks@1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
-    resolution: {integrity: sha512-aEf6HVxUS17zgrOu26+kDSVOINjUzPvT7/Ot3KjaB/jjvicDuoKABmz5Yxr9f5W20bXkzGQZgUj3K4z2Tt3vrQ==}
+  /@decent.xyz/box-hooks@1.0.45(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-nJP8dqGWjDz66eVH6iYmNgJKQvXBXxCricg8zDuPlPYJBpm9BDEjRwZoMJ3RA0vdUnRfZtShcr5TbjvZX05HaA==}
     peerDependencies:
       react: ^18.0.0
       swr: ^2.2.0
     dependencies:
-      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-common': 1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
       react: 18.2.0
       swr: 2.2.4(react@18.2.0)
     transitivePeerDependencies:
@@ -151,13 +151,13 @@ packages:
       - wagmi
     dev: false
 
-  /@decent.xyz/box-ui@1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
-    resolution: {integrity: sha512-XwfpGRu8sifLFCwkDCwfnzSd+FURekQWru9F7uMGjgstisqfy0QZ9ue4Tx7czCOvKx/RjehrhFne3ofJR2Azjg==}
+  /@decent.xyz/box-ui@1.0.43(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-j2CyBZwUR4Fic35K6N5vNkTQB8+zw3cCg/lokoMP4b6+D3J0rW+L3glyd51nJbWjC9Mb69c31ttRFXLhR3eZfQ==}
     peerDependencies:
       react: ^18.0.0
     dependencies:
-      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
-      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-common': 1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.45(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
       react: 18.2.0
     transitivePeerDependencies:
       - '@wagmi/core'
@@ -166,17 +166,17 @@ packages:
       - wagmi
     dev: false
 
-  /@decent.xyz/the-box@1.1.61(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
-    resolution: {integrity: sha512-exUDi6EPDI+GdoBo4lMlB/0kf1bsMce0Ku4pbUslYfQyql4ljcT8KCjMs+KQqb6PK5GB0KSluRIMHH8PG/FpuA==}
+  /@decent.xyz/the-box@1.1.62(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7):
+    resolution: {integrity: sha512-6tP+3FyuQCVWWYbT5igsvNcuj1mJpK3AIq8z+Ea9vhxUHzy8ezaA55b5rlf/Wic5fO07+CgWOV6ErnhX8G5awA==}
     peerDependencies:
       react: ^18.0.0
       swr: ^2.2.0
       viem: ^1.0.0
     dependencies:
-      '@decent.xyz/box-common': 1.0.8(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
-      '@decent.xyz/box-evm': 1.0.3(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
-      '@decent.xyz/box-hooks': 1.0.44(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
-      '@decent.xyz/box-ui': 1.0.42(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-common': 1.0.10(@wagmi/core@1.4.7)(react@18.2.0)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-evm': 1.0.4(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-hooks': 1.0.45(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
+      '@decent.xyz/box-ui': 1.0.43(@wagmi/core@1.4.7)(react@18.2.0)(swr@2.2.4)(viem@1.19.4)(wagmi@1.4.7)
       react: 18.2.0
       swr: 2.2.4(react@18.2.0)
       viem: 1.19.4(typescript@5.0.4)
