@@ -1,13 +1,26 @@
-import {ConnectButton} from "@rainbow-me/rainbowkit";
-import type {NextPage} from "next";
+import { ConnectButton } from "@rainbow-me/rainbowkit";
+import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
-import {Address, erc721ABI, useAccount, useContractRead, useWalletClient,} from "wagmi";
-import {TheBox} from "@decent.xyz/the-box";
-import {ActionType, bigintSerializer, ChainId} from "@decent.xyz/box-common";
-import {encodePacked, Hex, keccak256, parseEther} from "viem";
-import {ClientRendered} from "@decent.xyz/box-ui";
-import {useState} from "react";
-import {songcampAbi} from "../constants/songcampAbi";
+import {
+  Address,
+  erc721ABI,
+  useAccount,
+  useContractRead,
+  useWalletClient,
+} from "wagmi";
+import { TheBox } from "@decent.xyz/the-box";
+import { ActionType, bigintSerializer, ChainId } from "@decent.xyz/box-common";
+import {
+  ContractFunctionExecutionError,
+  encodePacked,
+  Hex,
+  keccak256,
+  parseEther,
+} from "viem";
+import { ClientRendered } from "@decent.xyz/box-ui";
+import { useState } from "react";
+import { songcampAbi } from "../constants/songcampAbi";
+import { getPublicClient, prepareWriteContract } from "@wagmi/core";
 
 const chains = [ChainId.SEPOLIA, ChainId.ZORA_GOERLI];
 
@@ -53,18 +66,20 @@ const FirstBox = () => {
         paymentButtonText="Mint an NFT"
         actionType={ActionType.NftMint}
         chains={chains}
-        actionConfig={{
-          contractAddress: nftAddress,
-          chainId: ChainId.ZORA_GOERLI,
-          cost: {
-            isNative: true,
-            amount: parseEther("0.00001"),
-          },
-          signature: "function safeMint(address to) payable",
-          args: [address],
-          deliverEth: true,
-          dstGasForCall: BigInt(2.5e5),
-        } as any}
+        actionConfig={
+          {
+            contractAddress: nftAddress,
+            chainId: ChainId.ZORA_GOERLI,
+            cost: {
+              isNative: true,
+              amount: parseEther("0.00001"),
+            },
+            signature: "function safeMint(address to) payable",
+            args: [address],
+            deliverEth: true,
+            dstGasForCall: BigInt(2.5e5),
+          } as any
+        }
         apiKey={process.env.NEXT_PUBLIC_DECENT_API_KEY as string}
       />
     </div>
@@ -198,6 +213,32 @@ const SecondBox = () => {
             dstGasForCall: BigInt(3e5),
           } as any
         }
+        disableGuard={async () => {
+          try {
+            const publicClient = getPublicClient({
+              chainId: ChainId.ZORA_GOERLI,
+            });
+            await publicClient.simulateContract({
+              address: nftAddress,
+              abi: songcampAbi,
+              functionName: "multiWriteToDiscSignature",
+              args: [tokenIds, songSelections, signature as Hex],
+            });
+          } catch (e) {
+            if (e instanceof ContractFunctionExecutionError) {
+              const err = e as ContractFunctionExecutionError;
+              const { metaMessages, message, shortMessage } = err;
+              return {
+                disable: true,
+                message: shortMessage,
+              };
+            }
+          }
+          return {
+            disable: true,
+            message: "Contract Simulation Failed",
+          };
+        }}
         apiKey={process.env.NEXT_PUBLIC_DECENT_API_KEY as string}
       />
     </div>
