@@ -212,14 +212,12 @@ const Home: NextPage = () => {
       <div className={styles.container}>
         <main className={styles.main}>
           <ConnectButton />
-
           <h1 className={styles.title}>Welcome to songcamp demo!</h1>
-
           <p>your address is: {address}</p>
+          <FirstBox />
+          <NftInfo />
+          <SecondBox />
         </main>
-        <FirstBox />
-        <NftInfo />
-        <SecondBox />
 
         <footer className={styles.footer}>
           <a
