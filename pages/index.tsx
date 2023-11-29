@@ -7,7 +7,7 @@ import {ActionType, bigintSerializer, ChainId} from "@decent.xyz/box-common";
 import {encodePacked, Hex, keccak256, parseEther} from "viem";
 import {ClientRendered} from "@decent.xyz/box-ui";
 import {useState} from "react";
-import {songcampAbi} from "./songcampAbi";
+import {songcampAbi} from "../constants/songcampAbi";
 
 const chains = [ChainId.SEPOLIA, ChainId.ZORA_GOERLI];
 
