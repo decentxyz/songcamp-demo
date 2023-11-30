@@ -9,7 +9,12 @@ import {
   useWalletClient,
 } from "wagmi";
 import { TheBox } from "@decent.xyz/the-box";
-import { ActionType, bigintSerializer, ChainId } from "@decent.xyz/box-common";
+import {
+  ActionType,
+  bigintSerializer,
+  ChainId,
+  EvmAddress,
+} from "@decent.xyz/box-common";
 import {
   ContractFunctionExecutionError,
   encodePacked,
@@ -20,11 +25,11 @@ import {
 import { ClientRendered } from "@decent.xyz/box-ui";
 import { useState } from "react";
 import { songcampAbi } from "../constants/songcampAbi";
-import { getPublicClient, prepareWriteContract } from "@wagmi/core";
+import { getPublicClient } from "@wagmi/core";
 
 const chains = [ChainId.SEPOLIA, ChainId.ZORA_GOERLI];
 
-const nftAddress = "0xd643567B131777cD52841Ca1FF7663Ba890a0092";
+const nftAddress: EvmAddress = "0xd643567B131777cD52841Ca1FF7663Ba890a0092";
 export const useNftBalance = ({
   address,
   token,
@@ -77,7 +82,6 @@ const FirstBox = () => {
             signature: "function safeMint(address to) payable",
             args: [address],
             deliverEth: true,
-            dstGasForCall: BigInt(2.5e5),
           } as any
         }
         apiKey={process.env.NEXT_PUBLIC_DECENT_API_KEY as string}
@@ -90,20 +94,36 @@ const NftInfo = () => {
   const chainId = ChainId.ZORA_GOERLI;
   console.log({ chainId });
   const [nftId, setNftId] = useState<number>(2);
-  const { data } = useContractRead({
+  const { address } = useAccount();
+
+  const commonArgs = {
     address: nftAddress,
     abi: songcampAbi,
-    functionName: "readCdMemory",
     chainId,
     watch: true,
+  };
+
+  const { data } = useContractRead({
+    ...commonArgs,
+    functionName: "readCdMemory",
     args: [BigInt(nftId)],
   });
+
+  const { data: owner } = useContractRead({
+    ...commonArgs,
+    functionName: "ownerOf",
+    args: [BigInt(nftId)],
+  });
+
   if (!data) {
     return <>loading...</>;
   }
   const [writerAddress, choiceId, written] = data;
   return (
     <div>
+      <p>
+        {owner == address ? "✅ You own this nft" : "❌ you don't own this nft"}
+      </p>
       <input
         className="rounded-lg border shadow-md bg-white px-24"
         type={"number"}
@@ -210,7 +230,6 @@ const SecondBox = () => {
               "function multiWriteToDiscSignature(uint256[] memory tokenIds,uint256[] memory songSelections,bytes memory signature)",
             args: [tokenIds, songSelections, signature as Hex],
             deliverEth: false,
-            dstGasForCall: BigInt(3e5),
           } as any
         }
         disableGuard={async () => {
@@ -224,6 +243,10 @@ const SecondBox = () => {
               functionName: "multiWriteToDiscSignature",
               args: [tokenIds, songSelections, signature as Hex],
             });
+            return {
+              disable: false,
+              message: "",
+            };
           } catch (e) {
             if (e instanceof ContractFunctionExecutionError) {
               const err = e as ContractFunctionExecutionError;
@@ -233,6 +256,7 @@ const SecondBox = () => {
                 message: shortMessage,
               };
             }
+            console.error("e", e);
           }
           return {
             disable: true,
